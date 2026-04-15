@@ -24,8 +24,18 @@ public class Ejercicio2 {
         p1.setNumeroDeConsultasRealizadas(numeroDeConsultasRealizadas);
         p1.setNivelDePrioridadMedica(nivelDePrioridadMedica);
 
-
-
+        System.out.println("----------------REPORTE PACIENTE------------------");
+        p1.mostrarInfo();
+        System.out.println("Tipo de seguro médico: "+p1.getTipoDeSeguroMedico());
+        System.out.println("Costo de consulta: $"+p1.getCostoDeConsulta());
+        System.out.println("Número de consultas realizadas: "+p1.getNumeroDeConsultasRealizadas());
+        System.out.println("Nivel de prioridad médica: "+p1.getNivelDePrioridadMedica());
+        System.out.println("--------------------------------------------------");
+        p1.mostrarDescuento();
+        p1.calcularCostoTotal();
+        System.out.println("Costo total: $"+p1.getCostoTotal());
+        p1.clasificarPaciente();
+        p1.generalMensaje();
 
 
     }
