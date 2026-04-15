@@ -45,6 +45,30 @@ public class Vendedor {
     public double getComision(){
         return comision;
     }
+    public void calcularIngresoTotal(){
+        ingresoTotal=montoVendido+comision;
+    }
+    public double getIngresoTotal(){
+        return  ingresoTotal;
+    }
 
+    public String mostrarEstadoDeCumplimiento(){
+        if (cumplimientoDeMeta>=90){
+            return "Excelente";
+        } else if (cumplimientoDeMeta>=70 && cumplimientoDeMeta<=89) {
+            return "Aceptable";
+        } else{
+            return "Bajo";
+        }
+    }
 
+    public  void mostrarDesempeño(){
+        if (cumplimientoDeMeta>=90){
+            System.out.println("Desempeño: Vendedor con desempeño sobresaliente");
+        } else if (cumplimientoDeMeta>=70 && cumplimientoDeMeta<=89) {
+            System.out.println("Desempeño: Vendedor con desempeño aceptable");
+        } else if (cumplimientoDeMeta<70) {
+            System.out.println("Desempeño: Se requiere seguimiento comercial");
+        }
+    }
 }

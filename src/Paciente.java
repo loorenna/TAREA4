@@ -53,6 +53,51 @@ public class Paciente {
 
         return nivelDePrioridadMedica;
     }
+    public void mostrarDescuento(){
+        if (tipoDeSeguroMedico.equals("Basico")){
+            System.out.println("Tiene un descuento del 10%");
+        } else if (tipoDeSeguroMedico.equals("Premium")) {
+            System.out.println("Tiene un descuento del 20%");
+        } else if (tipoDeSeguroMedico.equals("Sin seguro")) {
+            System.out.println("No aplica descuento");
+        }
+    }
+    public  void  calcularCostoTotal(){
+        if (tipoDeSeguroMedico.equals("Basico")){
+            costoTotal = costoDeConsulta - (costoDeConsulta * 0.10);
+        } else if (tipoDeSeguroMedico.equals("Premium")) {
+            costoTotal = costoDeConsulta - (costoDeConsulta * 0.20);
+        } else if (tipoDeSeguroMedico.equals("Sin seguro")) {
+            costoTotal = costoDeConsulta;
+        }
+    }
+    public  double getCostoTotal(){
+        return costoTotal;
+    }
+    public  void  clasificarPaciente(){
+        if (nivelDePrioridadMedica==1){
+            System.out.println("Clasificación: Prioridad baja");
+        } else if (nivelDePrioridadMedica==2 || nivelDePrioridadMedica==3) {
+            System.out.println("Clasificación: Prioridad media");
+        } else if (nivelDePrioridadMedica==4 || nivelDePrioridadMedica==5) {
+            System.out.println("Clasificación: Alta prioridad");
+        }
+    }
+    public  void  generalMensaje(){
+        if (nivelDePrioridadMedica==1){
+            System.out.println("Mensaje médico: Control regular");
+        } else if (nivelDePrioridadMedica==2 || nivelDePrioridadMedica==3) {
+            System.out.println("Mensaje médico: Seguimiento necesario");
+        } else if (nivelDePrioridadMedica==4 || nivelDePrioridadMedica==5) {
+            System.out.println("Mensaje médico: Atención inmediata requerida");
+        }
+    }
+    public void mostrarInfo(){
+        System.out.println("Nombre completo: "+nombreCompleto);
+        System.out.println("Número de identificación: "+numeroDeIdentificacion);
+        System.out.println("Edad: "+edad);
+    }
+
 
 
 
